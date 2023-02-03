@@ -4,7 +4,7 @@ pipeline {
 		maven 'maven'
 	}
 	parameters {
-		choice(name: 'Branch', choices['DEV', 'SIT', 'UAT', 'PRE-PROD'], description: 'Pick the Right Branch to build the Artifacts')
+		choice(name: 'Branch', choices: ['DEV', 'SIT', 'UAT', 'PRE-PROD'], description: 'Pick the Right Branch to build the Artifacts')
 	}
 	stages {
 		stage('Initialize'){
