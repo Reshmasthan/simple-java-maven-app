@@ -15,7 +15,7 @@ pipeline {
 		}
 		stage('SCM Checkout') {
 			steps {
-				checkout([$class: 'GitSCM', branches: [[name: '${params.Branch}']], extensions: [], userRemoteConfigs: [[credentialsId: 'git-passwd', url: 'https://github.com/Reshmasthan/simple-java-maven-app.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: '*/${params.Branch}']], extensions: [], userRemoteConfigs: [[credentialsId: 'git-passwd', url: 'https://github.com/Reshmasthan/simple-java-maven-app.git']]])
 			}
 		}
 		stage ('Build') {
